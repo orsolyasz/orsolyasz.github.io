@@ -3,7 +3,7 @@
    <title>Orsolya Szantho</title>
    <script src = "https://mimicproject.com/libs/maximilian.js"></script>
    <link href=
-'https://fonts.googleapis.com/css?family=Shizuru'
+https://fonts.googleapis.com/css?family=Syncopate
          rel='stylesheet' />
 </head>
 
@@ -52,10 +52,6 @@
 
 
   var face = new Image();
-  // face.onload = function(){
-  //   // context.drawImage(face, 400, 400,200,200);
-  //   console.log("loaded");
-  // };
   face.src = "https://raw.githubusercontent.com/orsolyasz/piggy/main/p1.png";
 
   var eyes = new Image();
@@ -74,10 +70,10 @@
       context.clearRect(0, 0, canvas.width, canvas.height);
 
       if (textshow==1){
-      context.font = "30px Shizuru";
+      context.font = "30px Syncopate";
       context.fillStyle = "white";
       context.textAlign = "center";
-      context.fillText("HOW MANY 🐷 ?", width*0.5, height*0.4);
+      context.fillText("ORSOLYA SZANTHO", width*0.5, height*0.4);
     }
 
       drawFace(pos1x,pos1y,size1);
@@ -114,11 +110,8 @@
       if(pos3y>height-size3 || pos3y<0){
         v3y=-v3y;
       }
-
-      //requestAnimationFrame(draw);
     }
 
-//  requestAnimationFrame(draw);
 
  setInterval(draw, 1000/50);
 
@@ -126,20 +119,6 @@
   function getMouse(mousePosition) {
         mouseX = mousePosition.layerX;
         mouseY = mousePosition.layerY;
-      //   console.log(mouseX);
-      //
-      //   context.clearRect(0, 0, canvas.width, canvas.height);
-      //
-      //   if(textshow==1){
-      //   context.font = "30px Shizuru";
-      //   context.fillStyle = "white";
-      //   context.textAlign = "center";
-      //   context.fillText("HOW MANY 🐷 ?", width*0.5, height*0.4);
-      // }
-      //
-      //   drawFace(pos1x,pos1y,size1);
-      //   drawFace(pos2x,pos2y,size2);
-      //   drawFace(pos3x,pos3y,size3);
       }
 
   function showText(){
@@ -150,8 +129,8 @@
   function drawFace(x,y,size){
     context.drawImage(face, x, y,size,size);
     context.drawImage(eyes, x+(mouseX-x)*0.02, y+(mouseY-y)*0.02,size,size);
-    context.drawImage(nose, x+(mouseX-x)*0.01, y+(mouseY-y)*0.01,size,size);
-    context.drawImage(ears, x+(mouseX-x)*0.005, y+(mouseY-y)*0.005,size,size);
+    //context.drawImage(nose, x+(mouseX-x)*0.01, y+(mouseY-y)*0.01,size,size);
+    //context.drawImage(ears, x+(mouseX-x)*0.005, y+(mouseY-y)*0.005,size,size);
   }
 
 </script>
