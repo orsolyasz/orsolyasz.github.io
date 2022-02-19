@@ -1,6 +1,7 @@
 <html>
 <head>
    <title>Orsolya Szantho</title>
+     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
    <script src = "https://mimicproject.com/libs/maximilian.js"></script>
    <link href=
 https://fonts.googleapis.com/css?family=Syncopate
@@ -28,7 +29,7 @@ https://fonts.googleapis.com/css?family=Roboto+Condensed
       }
       
       a {
-          color: #eeaf8f;
+          color: #ffa17c;
           stlye: none;
       }
      
@@ -52,11 +53,11 @@ https://fonts.googleapis.com/css?family=Roboto+Condensed
 <body style="background-color:black">
     <div id="info">
       <h1>ORSOLYA SZANTHO</h1> 
-      <p> <a href="url">Color&Cinematography Reel</a></p>
-      <p>  <a href="url">3D & Animation Reel</a></p>
-      <p> Download my <a href="url">Design Portfolio</a></p> 
+      <p> <a href="https://vimeo.com/622802285/c895e8930c">COLOR & CINEMATOGRAPHY REEL</a></p>
+      <p>  <a href="https://vimeo.com/662008662/9eacdd593a">2D & 3D ANIMATION</a></p>
+      <p> Download my <a href="url">DESIGN PORTFOLIO</a></p> 
       <p> Check out  <a href="https://glitchworks.org">GLITCH</a>, my creative collective</p>
-      <p> Reach out at</p>
+      <p id="contact"> Reach out at</p>
    </div>
     <canvas id="myCanvas"></canvas>
 </body>
@@ -70,19 +71,19 @@ https://fonts.googleapis.com/css?family=Roboto+Condensed
 
   var pos1x= Math.floor((Math.random() * width*.6) + 100);
   var pos1y= Math.floor((Math.random() * height*0.6) + 100);
-  var size1 = Math.floor(Math.random()*50)+150;
+  var size1 = Math.floor(Math.random()*20)+150;
   var v1x =3;
   var v1y =2;
 
   var pos2x= Math.floor((Math.random() * (width*0.8-200)+100));
   var pos2y= Math.floor((Math.random() * (height*0.8-200)+100));
-  var size2 = Math.floor(Math.random()*100)+100;
+  var size2 = Math.floor(Math.random()*80)+100;
   var v2x =1;
   var v2y =-1;
 
   var pos3x= Math.floor((Math.random() * width*.3) + 1);
   var pos3y= Math.floor((Math.random() * height*.3) + 1);
-  var size3 = Math.floor(Math.random()*60)+150;
+  var size3 = Math.floor(Math.random()*30)+150;
   var v3x=-2;
   var v3y=2;
 
@@ -92,7 +93,15 @@ https://fonts.googleapis.com/css?family=Roboto+Condensed
   var context = canvas.getContext("2d");
   canvas.setAttribute("width", width);
   canvas.setAttribute("height", height);
-  canvas.addEventListener('mousemove', getMouse, false);
+   
+  document.addEventListener('mousemove', getMouse, false);
+  
+   
+   var contactp = document.getElementById("contact");
+   contactp.textContent += " orsoly";
+   contactp.textContent += "a@g";
+   contactp.textContent += "litchwo";
+   contactp.textContent += "rks.org";
 
 
   var face = new Image();
@@ -161,8 +170,6 @@ https://fonts.googleapis.com/css?family=Roboto+Condensed
   function drawFace(x,y,size){
     context.drawImage(face, x, y,size,size);
     context.drawImage(eyes, x+(mouseX-x)*0.02, y+(mouseY-y)*0.02,size,size);
-    //context.drawImage(nose, x+(mouseX-x)*0.01, y+(mouseY-y)*0.01,size,size);
-    //context.drawImage(ears, x+(mouseX-x)*0.005, y+(mouseY-y)*0.005,size,size);
   }
 
 </script>
