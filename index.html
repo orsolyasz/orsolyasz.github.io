@@ -38,7 +38,6 @@ https://fonts.googleapis.com/css?family=Roboto+Condensed
          z-index:10;
          display: flex;
          flex-direction: column;
-         width: 30vw;
       }
       
       #myCanvas{
@@ -183,11 +182,11 @@ window.onload = function() {
 //	START Method 1. Based on: http://jsfiddle.net/AbdiasSoftware/vX7NK/
 
 	//var canvas = document.getElementById("n1"), ctx = canvas.getContext("2d");
-	function noise(ctx) {
-		var w = ctx.canvas.width, h = ctx.canvas.height, idata = ctx.createImageData(w, h), buffer32 = new Uint32Array(idata.data.buffer), len = buffer32.length, i = 0;
+	function noise(context) {
+		var w = context.canvas.width, h = context.canvas.height, idata = context.createImageData(w, h), buffer32 = new Uint32Array(idata.data.buffer), len = buffer32.length, i = 0;
 		for(; i < len;)
 			buffer32[i++] = ((255 * Math.random())|0) << 24; // Alter alpha channel
-		ctx.putImageData(idata, 0, 0);
+		context.putImageData(idata, 0, 0);
 	}
 	var toggle = true; // To get 30 fps instead of 60 fps
 	(function loop() {
@@ -196,7 +195,7 @@ window.onload = function() {
 			requestAnimationFrame(loop);
 			return;
 		}
-		noise(ctx);
+		noise(context);
 		requestAnimationFrame(loop);
 	})();
 
