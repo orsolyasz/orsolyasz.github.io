@@ -9,32 +9,31 @@ https://fonts.googleapis.com/css?family=Syncopate
 
 <body>
     <canvas id="myCanvas" style="z-index:0"></canvas>
-    <div style="z-index:2"></div>
+   <div style="z-index:2"><h1>ORSOLYA SZANTHO</h1></div>
 </body>
 <script type="text/javascript">
 
   var width = window.innerWidth;
   var height = window.innerHeight;
-  textshow=0;
 
   var mouseX =400;
   var mouseY =400;
 
   var pos1x= Math.floor((Math.random() * width*.6) + 100);
   var pos1y= Math.floor((Math.random() * height*0.6) + 100);
-  var size1 = Math.floor(Math.random()*100)+150;
+  var size1 = Math.floor(Math.random()*50)+150;
   var v1x =3;
   var v1y =2;
 
   var pos2x= Math.floor((Math.random() * (width*0.8-200)+100));
   var pos2y= Math.floor((Math.random() * (height*0.8-200)+100));
-  var size2 = Math.floor(Math.random()*200)+100;
+  var size2 = Math.floor(Math.random()*100)+100;
   var v2x =1;
   var v2y =-1;
 
   var pos3x= Math.floor((Math.random() * width*.3) + 1);
   var pos3y= Math.floor((Math.random() * height*.3) + 1);
-  var size3 = Math.floor(Math.random()*100)+150;
+  var size3 = Math.floor(Math.random()*60)+150;
   var v3x=-2;
   var v3y=2;
 
@@ -45,21 +44,18 @@ https://fonts.googleapis.com/css?family=Syncopate
   canvas.setAttribute("width", width);
   canvas.setAttribute("height", height);
   canvas.style.padding = 0;
-  canvas.style.margin=-0.01*height;
+  canvas.style.marginTop=-0.01*height;
+  canvas.syle.marginBottom= height;
   canvas.style.backgroundColor = "black";
   canvas.addEventListener('mousemove', getMouse, false);
-  canvas.addEventListener('mousedown', showText, false);
 
 
   var face = new Image();
   face.src = "https://raw.githubusercontent.com/orsolyasz/piggy/main/p1.png";
-
   var eyes = new Image();
   eyes.src = "https://raw.githubusercontent.com/orsolyasz/piggy/main/p2.png";
-
   var ears = new Image();
   ears.src = "https://raw.githubusercontent.com/orsolyasz/piggy/main/p3.png";
-
   var nose = new Image();
   nose.src = "https://raw.githubusercontent.com/orsolyasz/piggy/main/p4.png";
 
@@ -68,13 +64,12 @@ https://fonts.googleapis.com/css?family=Syncopate
 
   function draw() {
       context.clearRect(0, 0, canvas.width, canvas.height);
-
-      if (textshow==1){
-      context.font = "30px Syncopate";
-      context.fillStyle = "white";
-      context.textAlign = "center";
-      context.fillText("ORSOLYA SZANTHO", width*0.5, height*0.4);
-    }
+    
+//       context.font = "30px Syncopate";
+//       context.fillStyle = "white";
+//       context.textAlign = "center";
+//       context.fillText("ORSOLYA SZANTHO", width*0.5, height*0.4);
+   
 
       drawFace(pos1x,pos1y,size1);
       drawFace(pos2x,pos2y,size2);
@@ -121,9 +116,6 @@ https://fonts.googleapis.com/css?family=Syncopate
         mouseY = mousePosition.layerY;
       }
 
-  function showText(){
-    textshow=1;
-  }
 
 
   function drawFace(x,y,size){
