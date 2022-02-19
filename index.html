@@ -14,7 +14,7 @@ https://fonts.googleapis.com/css?family=Syncopate
    </style>
 </head>
 
-<body>
+<body style="background-color:black">
     <canvas id="myCanvas" style="z-index:0"></canvas>
    <div style="z-index:2"><h1>ORSOLYA SZANTHO</h1></div>
 </body>
@@ -52,7 +52,8 @@ https://fonts.googleapis.com/css?family=Syncopate
   canvas.setAttribute("height", height);
   canvas.style.padding = 0;
   canvas.style.marginTop=-0.01*height;
-  canvas.style.marginBottom= height;
+  canvas.style.marginLeft=-0.01*height;
+  canvas.style.marginBottom= -height;
   canvas.style.backgroundColor = "black";
   canvas.addEventListener('mousemove', getMouse, false);
 
