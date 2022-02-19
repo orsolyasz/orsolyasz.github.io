@@ -12,9 +12,10 @@ https://fonts.googleapis.com/css?family=Roboto+Condensed
       h1 {
          color: white;
          font-family: Syncopate, sans-serif;
-         font-size: 40px;
+         font-size: 50px;
          z-index: 5;
          text-align: center;
+         margin-top:200px;
       }
       
       p {
@@ -22,21 +23,42 @@ https://fonts.googleapis.com/css?family=Roboto+Condensed
          text-align: center;
          color: white;
          font-family: 'Roboto Condensed', sans-serif;
+         font-weight:200;
          font-size: 20px;
       }
+      
+      a {
+          color: #eeaf8f;
+          stlye: none;
+      }
+     
+      #info{
+         z-index:10;
+         display: flex;
+         flex-direction: column;
+      }
+      
+      #myCanvas{
+         z-index: -1;
+         position: fixed;
+         top:0px;
+         left:0px;
+         padding: 0px;
+      }
+      
    </style>
 </head>
 
 <body style="background-color:black">
-    <div>
+    <div id="info">
       <h1>ORSOLYA SZANTHO</h1> 
-      <p> See my<a href="url">Color&Cinematography Reel</a></p>
-      <p> Watch my <a href="url">3D & Animation Reel</a></p>
+      <p> <a href="url">Color&Cinematography Reel</a></p>
+      <p>  <a href="url">3D & Animation Reel</a></p>
       <p> Download my <a href="url">Design Portfolio</a></p> 
-      <p> Check out my creative collective <a href="https://glitchworks.org">GLITCH</a></p>
+      <p> Check out  <a href="https://glitchworks.org">GLITCH</a>, my creative collective</p>
       <p> Reach out at</p>
    </div>
-    <canvas id="myCanvas" style="z-index:0"></canvas>
+    <canvas id="myCanvas"></canvas>
 </body>
 <script type="text/javascript">
 
@@ -70,11 +92,6 @@ https://fonts.googleapis.com/css?family=Roboto+Condensed
   var context = canvas.getContext("2d");
   canvas.setAttribute("width", width);
   canvas.setAttribute("height", height);
-  canvas.style.position = "absolute";
-  canvas.style.padding = 0;
-  canvas.style.marginTop=-0.01*height;
-  canvas.style.marginLeft=-0.01*height;
-  //canvas.style.marginBottom= -height;
   canvas.addEventListener('mousemove', getMouse, false);
 
 
