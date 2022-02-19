@@ -106,7 +106,7 @@ https://fonts.googleapis.com/css?family=Roboto+Condensed
 
 
   var face = new Image();
-  face.src = "https://raw.githubusercontent.com/orsolyasz/piggy/main/p1.png";
+  face.src = "https://raw.githubusercontent.com/orsolyasz/orsolyasz.github.io/main/os-favicon-01.png";
   var eyes = new Image();
   eyes.src = "https://raw.githubusercontent.com/orsolyasz/piggy/main/p2.png";
   var ears = new Image();
@@ -169,37 +169,11 @@ https://fonts.googleapis.com/css?family=Roboto+Condensed
 
 
   function drawFace(x,y,size){
-//     context.drawImage(face, x, y,size,size);
-//     context.drawImage(eyes, x+(mouseX-x)*0.02, y+(mouseY-y)*0.02,size,size);
+    context.drawImage(face, x, y,size,size);
+    context.drawImage(eyes, x+(mouseX-x)*0.02, y+(mouseY-y)*0.02,size,size);
   }
    
-   
- //var pseudo=true;$("nav button").click(function(){$("nav ul").toggle("fast");if(pseudo===true){$("nav button").addClass("noPseudo");pseudo=false;}else{$("nav button").removeClass("noPseudo");pseudo=true;}$("nav button div").toggle("fast");});
 
-
-window.onload = function() {
-
-//	START Method 1. Based on: http://jsfiddle.net/AbdiasSoftware/vX7NK/
-
-	//var canvas = document.getElementById("n1"), ctx = canvas.getContext("2d");
-	function noise(context) {
-		var w = context.canvas.width, h = context.canvas.height, idata = context.createImageData(w, h), buffer32 = new Uint32Array(idata.data.buffer), len = buffer32.length, i = 0;
-		for(; i < len;)
-			buffer32[i++] = ((255 * Math.random())|0) << 24; // Alter alpha channel
-		context.putImageData(idata, 0, 0);
-	}
-	var toggle = true; // To get 30 fps instead of 60 fps
-	(function loop() {
-		toggle = !toggle;
-		if(toggle) {
-			requestAnimationFrame(loop);
-			return;
-		}
-		noise(context);
-		requestAnimationFrame(loop);
-	})();
-
-} // END window.onload
 
 </script>
 </html>
