@@ -5,18 +5,38 @@
    <link href=
 https://fonts.googleapis.com/css?family=Syncopate
          rel='stylesheet' />
+   <link href=
+https://fonts.googleapis.com/css?family=Roboto+Condensed
+         rel='stylesheet' />
    <style>
       h1 {
          color: white;
          font-family: Syncopate, sans-serif;
          font-size: 40px;
+         z-index: 5;
+         text-align: center;
+      }
+      
+      p {
+         z-index: 5;
+         text-align: center;
+         color: white;
+         font-family: 'Roboto Condensed', sans-serif;
+         font-size: 20px;
       }
    </style>
 </head>
 
 <body style="background-color:black">
+    <div>
+      <h1>ORSOLYA SZANTHO</h1> 
+      <p> See my<a href="url">Color&Cinematography Reel</a></p>
+      <p> Watch my <a href="url">3D & Animation Reel</a></p>
+      <p> Download my <a href="url">Design Portfolio</a></p> 
+      <p> Check out my creative collective <a href="https://glitchworks.org">GLITCH</a></p>
+      <p> Reach out at</p>
+   </div>
     <canvas id="myCanvas" style="z-index:0"></canvas>
-   <div style="z-index:2"><h1>ORSOLYA SZANTHO</h1></div>
 </body>
 <script type="text/javascript">
 
@@ -50,11 +70,11 @@ https://fonts.googleapis.com/css?family=Syncopate
   var context = canvas.getContext("2d");
   canvas.setAttribute("width", width);
   canvas.setAttribute("height", height);
+  canvas.style.position = "absolute";
   canvas.style.padding = 0;
   canvas.style.marginTop=-0.01*height;
   canvas.style.marginLeft=-0.01*height;
-  canvas.style.marginBottom= -height;
-  canvas.style.backgroundColor = "black";
+  //canvas.style.marginBottom= -height;
   canvas.addEventListener('mousemove', getMouse, false);
 
 
@@ -72,12 +92,7 @@ https://fonts.googleapis.com/css?family=Syncopate
 
   function draw() {
       context.clearRect(0, 0, canvas.width, canvas.height);
-    
-//       context.font = "30px Syncopate";
-//       context.fillStyle = "white";
-//       context.textAlign = "center";
-//       context.fillText("ORSOLYA SZANTHO", width*0.5, height*0.4);
-   
+     
 
       drawFace(pos1x,pos1y,size1);
       drawFace(pos2x,pos2y,size2);
