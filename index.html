@@ -1,7 +1,7 @@
 <html>
 <head>
    <title>Orsolya Szantho</title>
-     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+     <link rel="icon" type="image/x-icon" href="fav.png">
    <script src = "https://mimicproject.com/libs/maximilian.js"></script>
    <link href=
 https://fonts.googleapis.com/css?family=Syncopate
@@ -17,6 +17,7 @@ https://fonts.googleapis.com/css?family=Roboto+Condensed
          z-index: 5;
          text-align: center;
          margin-top:200px;
+         font-weight: bold;
       }
       
       p {
@@ -30,13 +31,14 @@ https://fonts.googleapis.com/css?family=Roboto+Condensed
       
       a {
           color: #ffa17c;
-          stlye: none;
+          text-decoration: none;
       }
      
       #info{
          z-index:10;
          display: flex;
          flex-direction: column;
+         width: 30vw;
       }
       
       #myCanvas{
@@ -55,7 +57,7 @@ https://fonts.googleapis.com/css?family=Roboto+Condensed
       <h1>ORSOLYA SZANTHO</h1> 
       <p> <a href="https://vimeo.com/622802285/c895e8930c">COLOR & CINEMATOGRAPHY REEL</a></p>
       <p>  <a href="https://vimeo.com/662008662/9eacdd593a">2D & 3D ANIMATION</a></p>
-      <p> Download my <a href="url">DESIGN PORTFOLIO</a></p> 
+      <p> Download my <a href="https://glitchworks.org/wp-content/uploads/2022/02/Orsolya-Szantho-Design-Portfolio-2022-min.pdf">DESIGN PORTFOLIO</a></p> 
       <p> Check out  <a href="https://glitchworks.org">GLITCH</a>, my creative collective</p>
       <p id="contact"> Reach out at</p>
    </div>
@@ -168,9 +170,37 @@ https://fonts.googleapis.com/css?family=Roboto+Condensed
 
 
   function drawFace(x,y,size){
-    context.drawImage(face, x, y,size,size);
-    context.drawImage(eyes, x+(mouseX-x)*0.02, y+(mouseY-y)*0.02,size,size);
+//     context.drawImage(face, x, y,size,size);
+//     context.drawImage(eyes, x+(mouseX-x)*0.02, y+(mouseY-y)*0.02,size,size);
   }
+   
+   
+ //var pseudo=true;$("nav button").click(function(){$("nav ul").toggle("fast");if(pseudo===true){$("nav button").addClass("noPseudo");pseudo=false;}else{$("nav button").removeClass("noPseudo");pseudo=true;}$("nav button div").toggle("fast");});
+
+
+window.onload = function() {
+
+//	START Method 1. Based on: http://jsfiddle.net/AbdiasSoftware/vX7NK/
+
+	//var canvas = document.getElementById("n1"), ctx = canvas.getContext("2d");
+	function noise(ctx) {
+		var w = ctx.canvas.width, h = ctx.canvas.height, idata = ctx.createImageData(w, h), buffer32 = new Uint32Array(idata.data.buffer), len = buffer32.length, i = 0;
+		for(; i < len;)
+			buffer32[i++] = ((255 * Math.random())|0) << 24; // Alter alpha channel
+		ctx.putImageData(idata, 0, 0);
+	}
+	var toggle = true; // To get 30 fps instead of 60 fps
+	(function loop() {
+		toggle = !toggle;
+		if(toggle) {
+			requestAnimationFrame(loop);
+			return;
+		}
+		noise(ctx);
+		requestAnimationFrame(loop);
+	})();
+
+} // END window.onload
 
 </script>
 </html>
